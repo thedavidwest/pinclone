@@ -1,0 +1,31 @@
+<div class="mobile-nav">
+  <ul>
+    <li><%= link_to "Log In", new_user_session_path %></li>
+    <li><%= link_to "Sign Up", new_user_registration_path %><li>
+    <% if user_signed_in? %>
+      <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+      <li><%= link_to "Edit User", edit_user_registration_path %></li>
+      <li class="new-pin-btn"><%= link_to "New Pin", new_pin_path %></li>
+    <% end %>
+  </ul>
+</div>
+<header>
+  <div class="header-position">
+    <h1 class="logo">pinclone</h1>
+    <% if user_signed_in? %>
+      <li class="new-pin-btn"><%= link_to "New Pin", new_pin_path %></li>
+    <% end %>
+    <div class="site-nav">
+      <ul>
+        <% if user_signed_in? %>
+          <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+          <li><%= link_to "Edit User", edit_user_registration_path %></li>
+        <% else %>
+          <li><%= link_to "Log In", new_user_session_path %></li>
+          <li><%= link_to "Sign Up", new_user_registration_path %><li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="mobile-nav-toggle"><span></span></div>
+  </div>
+</header>

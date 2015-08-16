@@ -1,0 +1,44 @@
+.home-wrap
+  +display(flex)
+  +flex-wrap(wrap)
+  min-height: 100vh
+  @media (max-width: 775px)
+    display: block
+
+  .home-sections
+    flex: 1
+    margin: 0 auto
+
+    .all-pins
+      +display(flex)
+      +flex-wrap(wrap)
+      +outer-container(100%)
+
+
+      .box
+        margin: 10px
+        padding: 0
+        width: 350PX
+        background: $white
+        text-align: center
+        box-shadow: 0px 0px 5px transparentize($black, .9)
+
+        a
+          color: $yellow
+          line-height: 1
+          transition: .3s ease-in-out
+          &:hover
+            color: darken($yellow, 25%)
+
+        .box img
+          width: 100%
+
+.show-wrap
+  +display(flex)
+  flex: 1
+  .show
+    margin: auto auto
+
+hr
+  margin: 0
+  line-height: 0
