@@ -1,6 +1,6 @@
 header
   width: 135px
-  background: $yellow
+  background: $white
   padding: 30px 0
 
   .header-position
@@ -21,24 +21,29 @@ header
       repeat: no-repeat
       position: center
       size: contain
-    height: 80px
+    height: 70px
     padding: 0
     margin: 0
 
   // Desktop Nav
-  li.new-pin-btn
+  .new-pin-btn
     font-weight: 700
     text-transform: uppercase
     text-align: right
-    padding: 5px
     list-style: none
-    margin: 20px 0
-    padding: 0 20px 0 0
+    margin: 0 auto
     a
       color: $black
       transition: .3s ease-in-out
+      border: 1px solid $black
+      padding: 10px 20px
+      border-radius: 4px
       &:hover
-        color: darken($yellow, 25%)
+        color: $yellow
+        background: $white
+        border: 1px solid $grey
+    @media(max-width: 775px)
+      display: none
   .site-nav
     ul
       list-style: none
@@ -59,9 +64,6 @@ header
 
       &:last-child
         margin-bottom: 0
-
-    li.new-pin-btn
-      margin-bottom: 100px
 
   .email-link
     display: block

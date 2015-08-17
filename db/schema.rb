@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150816153439) do
+ActiveRecord::Schema.define(version: 20150817154222) do
 
   create_table "pins", force: :cascade do |t|
     t.string   "description"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20150816153439) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "user_id"
+    t.string   "title"
   end
 
   add_index "pins", ["user_id"], name: "index_pins_on_user_id"
@@ -40,6 +41,7 @@ ActiveRecord::Schema.define(version: 20150816153439) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "authentication_token"
+    t.string   "name"
   end
 
   add_index "users", ["authentication_token"], name: "index_users_on_authentication_token"

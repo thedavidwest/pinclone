@@ -1,13 +1,14 @@
-<div class="show-wrap">
-  <div class="show">
+<div class="user-wrap">
+  <div class="user-show">
     <%= image_tag @pin.image.url %>
-    <p>
-      <strong>Description:</strong>
-      <%= @pin.description %>
-    </p>
-    <% if @pin.user == current_user %>
-      <%= link_to 'Edit', edit_pin_path(@pin) %> |
-    <% end %>
-    <%= link_to 'Back', pins_path %>
+    <h3><%= @pin.title %></h3>
+    <h4><%= @pin.description %></h4>
+    <p>by <span><%= @pin.user.name if @pin.user %></span><p>
+    <div class="user-btn-shared">
+      <% if @pin.user == current_user %>
+        <%= link_to 'Edit', edit_pin_path(@pin) %> |
+      <% end %>
+      <%= link_to 'Back', pins_path %>
+    </div>
   </div>
 </div>

@@ -1,6 +1,10 @@
-<h1>Editing Pin</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @pin %> |
-<%= link_to 'Back', pins_path %>
+<div class="user-wrap">
+  <div class="user-form">
+    <h2>Edit Pin</h2>
+    <%= render 'form' %>
+    <div class="user-btn-shared">
+      <%= link_to 'Show', @pin %> |
+      <%= link_to 'Back', pins_path %>
+    </div>
+  </div>
+</div>

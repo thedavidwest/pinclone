@@ -28,7 +28,7 @@ class PinsController < ApplicationController
   end
 
   def update
-    @pin = current_user.pins.build(pin_params)
+  
 
     respond_to do |format|
       if @pin.update(pin_params)
@@ -53,6 +53,6 @@ class PinsController < ApplicationController
     end
 
     def pin_params
-      params.require(:pin).permit(:description, :image)
+      params.require(:pin).permit(:description, :image, :title, :name)
     end
 end

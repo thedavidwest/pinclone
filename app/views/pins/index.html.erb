@@ -1,14 +1,20 @@
 <div class="all-pins transitions-enabled">
     <% @pins.reverse_each do |pin| %>
     <div class="box">
-      <%= link_to image_tag(pin.image.url(:medium)), pin_path(pin) %>
-      <div class="box-body">
-        <%= pin.description %>
-        <%= pin.user.email if pin.user %>
+      <%= link_to image_tag(pin.image.url), pin_path(pin) %>
+      <div class="pin-edit">
         <% if pin.user == current_user %>
           <%= link_to '', edit_pin_path(pin) %>
           <%= link_to '✖', pin, method: :delete, data: { confirm: 'Are you sure?' } %>
         <% end %>
+      </div>
+      <div class="box-body">
+        <h1><%= pin.title %></h1>
+        <h2><%= pin.description %></h2>
+      </div>
+      <hr>
+      <div class="box-body">
+        <p>by <span><%= pin.user.name if pin.user %></span><p>
       </div>
     </div>
   <% end %>
