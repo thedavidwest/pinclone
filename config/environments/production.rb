@@ -1,12 +1,4 @@
 Rails.application.configure do
-  config.paperclip_defaults = {
-  :storage => :s3,
-  :s3_credentials => {
-    :bucket => ENV['AWS_BUCKET'],
-    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
-  }
-}
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -84,5 +76,14 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'https://bw-pinclone.herokuapp.com' }
+
+  config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => ENV['AWS_BUCKET'],
+    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+  }
+}
 end
