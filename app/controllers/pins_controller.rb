@@ -28,7 +28,7 @@ class PinsController < ApplicationController
   end
 
   def update
-  
+
 
     respond_to do |format|
       if @pin.update(pin_params)
@@ -42,7 +42,7 @@ class PinsController < ApplicationController
   def destroy
     @pin.destroy
     respond_to do |format|
-      format.html { redirect_to pins_url, notice: 'Pin was successfully destroyed.' }
+      format.html { redirect_to pins_url, notice: 'Pin was successfully deleted.' }
       format.json { head :no_content }
     end
   end
