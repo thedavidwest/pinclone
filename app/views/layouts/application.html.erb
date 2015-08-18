@@ -11,8 +11,20 @@
   <div class="home-wrap">
     <%=  render "layouts/header" %>
     <div class="home-sections">
+      <% flash.each do |name, msg| %>
+        <%= content_tag(:div, msg, class: "alert")%>
+      <% end %>
       <%= yield %>
     </div>
   </div>
+<script>
+  $(document).ready(function(){
+    setTimeout(function(){
+      $('.alert').fadeOut("slow", function(){
+        $this.remove();
+      })
+    }, 10000000);
+  });
+</script>
 </body>
 </html>

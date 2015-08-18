@@ -9,6 +9,21 @@
   .home-sections
     flex: 1
     margin: 0 auto
+    position: relative
+
+    .alert
+      width: 100%
+      text-align: center
+      background: transparentize($yellow, .3)
+      color: $white
+      text-transform: uppercase
+      font-weight: 700
+      z-index: 999
+      position: absolute
+      top: 0
+      padding: 20px 0
+      padding-left: -135px
+
 
     .all-pins
       +display(flex)
@@ -63,7 +78,7 @@
         hr
           line-height: 1
           margin: 0
-          
+
         .pin-edit
           position: absolute
           top: 0
