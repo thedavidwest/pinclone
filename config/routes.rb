@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
-  resources :pins
+  get 'profiles/show'
+
+  resources :pins do
+    member do
+      put "like", to: "pins#upvote"
+    end
+  end
   devise_for :users
   root 'pins#index'
+
+  get '/:id', to: 'profiles#show', as: :profile
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -40,6 +40,24 @@
       color: transparentize($black, .3)
     input[type="file"]
       border-bottom: none
+
+  #error_explanation
+    color: $black
+    text-align: center
+    font-weight: 700
+    margin-bottom: 15px
+    h2
+      color: $black
+      font-size: 20px
+      text-transform: none
+      letter-spacing: normal
+    ul
+      background: transparentize($yellow, .1)
+      border-radius: 0px 0px 5px 5px
+      font-size: 12px
+      padding: 10px 0
+
+
   .user-btn-main
     text-align: center
     margin-bottom: 10px
@@ -72,8 +90,9 @@
     box-shadow: 0px 0px 5px transparentize($black, .9)
     margin: 20px 0
     height: 100%
+    text-align: center
     img
-      width: 100%
+      max-width: 100%
     h2, h3
       font-size: 30px
       color: $yellow
@@ -86,15 +105,32 @@
       margin-top: 20px
     h4
       font-weight: 400
+      text-align: left
       color: darken($grey, 25%)
     p
       font-size: .9em
       margin: 0
       line-height: 1
       padding-top: 10px
+      text-align: left
       span
         font-weight: 700
+        a
+          color: $yellow
+          transition: .3s ease-in-out
+          &:hover
+            color: darken($yellow, 25%)
 
+    .vote
+      margin: 10px 0 10px 0
+      text-align: left
+      a
+        background: $yellow
+        border-radius: 5px
+        padding: 5px 10px
+        color: $white
+        &:hover
+          color: $black
   .user-btn-main
     text-align: center
     margin-bottom: 10px

@@ -11,14 +11,16 @@
 </div>
 <header>
   <div class="header-position">
-    <h1 class="logo"><%= link_to "pinclone", pins_path %></h1>
+    <div class="logo">
+      <%= link_to "pinclone", pins_path %>
+    </div>
     <% if user_signed_in? %>
       <div class="new-pin-btn"><%= link_to "New Pin", new_pin_path %></div>
     <% end %>
     <div class="site-nav">
       <ul>
         <% if user_signed_in? %>
-          <li>My Pins</li>
+          <li><%= link_to "My Pins", profile_path(current_user.name) %></li>
           <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
           <li><%= link_to "Edit User", edit_user_registration_path %></li>
         <% else %>
