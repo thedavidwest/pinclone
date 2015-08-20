@@ -17,22 +17,22 @@
 
 
       <div class="form-group">
-        <%= f.label :avatar, class: 'col-sm-2 control-label'  %>
+        <%= f.label "Upload Avatar", class: 'col-sm-2 control-label'  %>
         <div class="col-sm-6">
             <%= f.file_field :avatar %>
-        </div>
+        </div><br>
       </div>
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %>
       <% end %>
 
       <div class="field">
-        <%= f.label :password %> <i>(leave blank if you don't want to change it)</i>
+        <%= f.label "New Password" %> <i>(leave blank if you don't want to change it)</i>
         <%= f.password_field :password, autocomplete: "off" %>
       </div>
 
       <div class="field">
-        <%= f.label :password_confirmation %>
+        <%= f.label "Confirm New Password" %>
         <%= f.password_field :password_confirmation, autocomplete: "off" %>
       </div>
 
