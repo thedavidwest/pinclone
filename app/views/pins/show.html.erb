@@ -5,7 +5,7 @@
     <h4><%= @pin.description %></h4>
     <p>by <span><%= link_to @pin.user.name, profile_path(@pin.user.name) if @pin.user %></span><p>
     <%= link_to like_pin_path(@pin), method: :put do |u| %>
-      <div class="vote">❤ <%= @pin.get_upvotes.size %></div>
+      <div class="vote"><i class="fa fa-heart"></i> <%= @pin.get_upvotes.size %></div>
     <% end %>
     <div class="user-btn-shared">
       <% if @pin.user == current_user %>

@@ -18,7 +18,7 @@ gem 'aws-sdk', '< 2.0'
 gem 'masonry-rails', '~> 0.2.4'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'bcrypt', '~> 3.1.7'
-
+gem 'font-awesome-sass'
 gem 'unicorn'
 
 # Use Capistrano for deployment

@@ -4,17 +4,23 @@
     <h1><%= @user.name %></h1>
     <h3>My Pins</h3>
   </div>
-  <div class="box new-pin">
-    <h5><%= link_to "✚", new_pin_path %></h5>
-  </div>
+  <% if @user == current_user %>
+    <div class="box new-pin">
+      <h5><%= link_to new_pin_path do %><i class="fa fa-plus-circle"></i><% end %></h5>
+    </div>
+  <% end %>
   <% if @pins %>
     <% @pins.reverse_each do |pin| %>
       <div class="box">
         <div class="edit-image"><%= link_to image_tag(pin.image.url), pin_path(pin) %>
           <div class="pin-edit">
             <% if pin.user == current_user %>
-              <%= link_to '', edit_pin_path(pin) %>
-              <%= link_to '✖', pin, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <%= link_to edit_pin_path(pin) do %>
+                <i class="fa fa-pencil-square-o"></i>
+              <% end %>
+              <%= link_to pin, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <i class="fa fa-trash-o"></i>
+              <% end %>
             <% end %>
           </div>
           <div class="box-body">
@@ -23,7 +29,7 @@
           </div>
           <div class="box-body">
             <%= link_to like_pin_path(pin), method: :put do |u| %>
-              <div class="vote">❤ <%= pin.get_upvotes.size %></div>
+              <div class="vote"><i class="fa fa-heart"></i> <%= pin.get_upvotes.size %></div>
             <% end %>
           </div>
         </div>

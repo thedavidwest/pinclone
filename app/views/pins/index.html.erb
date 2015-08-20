@@ -4,8 +4,12 @@
       <div class="edit-image"><%= link_to image_tag(pin.image.url), pin_path(pin) %>
         <div class="pin-edit">
           <% if pin.user == current_user %>
-            <%= link_to '', edit_pin_path(pin) %>
-            <%= link_to '✖', pin, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to edit_pin_path(pin) do %>
+              <i class="fa fa-pencil-square-o"></i>
+            <% end %>
+            <%= link_to pin, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <i class="fa fa-trash-o"></i>
+            <% end %>
           <% end %>
         </div>
       </div>
