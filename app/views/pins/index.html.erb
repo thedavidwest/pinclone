@@ -15,6 +15,13 @@
       </div>
       <hr>
       <div class="box-body">
+        <div class="avatar">
+          <% if pin.user == current_user %>
+            <%= link_to image_tag(current_user.avatar.url(:thumb)), edit_user_registration_path %>
+          <% else %>
+            <%= link_to image_tag(pin.user.avatar.url(:thumb)), profile_path(pin.user.name) %>
+          <% end %>
+        </div>
         <p>by <span><%=link_to pin.user.name, profile_path(pin.user.name) %></span><p>
       </div>
     </div>
